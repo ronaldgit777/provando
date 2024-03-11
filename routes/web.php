@@ -41,7 +41,12 @@ Auth::routes();
 
 
 Route::get('/', function () {
-    return view('auth.login');
+    return response()->view('auth.login')
+    ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+    ->header('Pragma', 'no-cache') // HTTP 1.0.
+    ->header('Expires', '0'); // Proxies.
+
+
 });
 
 //Auth::routes();
@@ -51,7 +56,7 @@ Route::get('/', function () {
 
         //route::get('/',[ProfesorController::class,'index'])->name('home');
     
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
       
         Route::post('/notamodal',[App\Http\Controllers\NotaController::class, 'notamodal'])->name('notamodal')->middleware('auth'); //lista de aulas
         Route::post('/obtener-listaalumnosinscritos',[App\Http\Controllers\InscripcionController::class, 'listaalumnosinscritos'])->name('obtener-listaalumnosinscritos')->middleware('auth'); //lista de aulas
@@ -120,6 +125,7 @@ Route::post('/obtener-fechainiciosupro',[App\Http\Controllers\SueldoproControlle
 Route::post('/obtener-sueldoprofesor', [App\Http\Controllers\SueldoproController::class, 'obtenerSueldoProfesor'])->name('obtener-sueldoprofesor')->middleware('auth');
 Route::post('/obtener-SumatoriaAdelantos', [App\Http\Controllers\AdelantoproController::class, 'obtenersumatoriaadelantosProfesor'])->name('obtener-SumatoriaAdelantos')->middleware('auth');
 Route::post('/obtener-mesessaldopro', [App\Http\Controllers\SueldoproController::class, 'mesessaldopro'])->name('obtener-mesessaldopro')->middleware('auth');
+
 route::resource('aula',AulaController::class)->middleware('auth');
 Route::post('/buscar-aulas',[App\Http\Controllers\AulaController::class, 'buscaraulas'])->name('buscar-aulas')->middleware('auth'); //lista de aulas
 route::resource('materia',MateriaController::class)->middleware('auth');   

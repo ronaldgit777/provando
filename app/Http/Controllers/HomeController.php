@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return response()->view('home')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 }

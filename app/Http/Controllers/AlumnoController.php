@@ -163,10 +163,18 @@ class AlumnoController extends Controller
      }
     public function index()
     {
-        $alumnos=alumno::paginate(5);
+        /*$alumnos=alumno::paginate(5);
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('alumno.index',compact('alumnos'));
+         return view('alumno.index',compact('alumnos'));*/
+
+         $alumnos=alumno::paginate(5);    
+          $response = response()->view('alumno.index',compact('alumnos'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+  
+          return $response;
          
     }
 
@@ -178,7 +186,8 @@ class AlumnoController extends Controller
     public function create()
     {
        // return view('alumno.create',['alumnos'=>alumno::all()]);
-       return view('alumno.create');
+       //return view('alumno.create');
+       return response()->view('alumno.create')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -207,12 +216,14 @@ class AlumnoController extends Controller
     public function show($id)
     {
         $alumno=alumno::findOrFail($id);
-        return view('alumno.show',compact('alumno'));
+       // return view('alumno.show',compact('alumno'));
+        return response()->view('alumno.show',compact('alumno'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     public function show2alu($id)
     {
         $alumno=alumno::findOrFail($id);
-        return view('alumno.show2',compact('alumno'));
+        //return view('alumno.show2',compact('alumno'));
+        return response()->view('alumno.show2',compact('alumno'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -225,7 +236,8 @@ class AlumnoController extends Controller
     {
         $alumno=alumno::findOrFail($id);
         //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('alumno.edit',compact('alumno'));
+        //return view('alumno.edit',compact('alumno'));
+        return response()->view('alumno.edit',compact('alumno'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

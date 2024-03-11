@@ -119,7 +119,6 @@ class RegisterController extends Controller
          $fechaActual = Carbon::now();
          // Obtén el día del mes    
          $dia = $fechaActual->day;
-
         //fecha de registro del profesor: $empleado->created_at
         if($dia>1){      
             $descuento = ($sueldo/30)*($dia-1);      
@@ -153,7 +152,8 @@ class RegisterController extends Controller
 
     public function formularioEmpleado()
     {
-        return view('auth.registroEmpleado');
+        //return view('auth.registroEmpleado');
+        return response()->view('auth.registroEmpleado')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }  
 
     public function verperfiluser()

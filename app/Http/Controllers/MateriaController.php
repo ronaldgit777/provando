@@ -21,8 +21,15 @@ class MateriaController extends Controller
     }
     public function index()
     {
-        $datos['materias']=materia::paginate(5);
-        return view('materia.index',$datos);
+       /* $datos['materias']=materia::paginate(5);
+        return view('materia.index',$datos);*/
+
+        $datos['materias']=materia::paginate(5);  
+        $response = response()->view('materia.index',$datos)
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**
@@ -32,7 +39,8 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        return view('materia.create');
+        //return view('materia.create');
+        return response()->view('materia.create')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -68,9 +76,12 @@ class MateriaController extends Controller
      */
     public function edit($id)
     {
-        $materia=materia::findOrFail($id);
+       /* $materia=materia::findOrFail($id);
         //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('materia.edit',compact('materia'));
+        return view('materia.edit',compact('materia'));*/
+
+        $materia=materia::findOrFail($id);
+        return response()->view('materia.edit',compact('materia'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
 

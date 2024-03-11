@@ -53,9 +53,9 @@ class SueldoproController extends Controller
     {
         $sueldopros=sueldopro::paginate(5);
         $profesors=profesor::all();
-       // return profesor::with('sueldopro')->get(); 
-        //$datos['sueldopros']=sueldopro::paginate(7);
         return view('sueldopro.index',compact('sueldopros','profesors'));
+
+        
     }
 
     /**

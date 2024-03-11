@@ -52,11 +52,20 @@ class SueldosecreController extends Controller
     }
     public function index()
     {
-        $sueldosecres=sueldosecre::paginate(5);
-        $secretarias=secretaria::all();
+        /*$sueldosecres=sueldosecre::paginate(5);
+        $secretarias=secretaria::all();*/
        // return profesor::with('sueldopro')->get(); 
         //$datos['sueldopros']=sueldopro::paginate(7);
-        return view('sueldosecre.index',compact('sueldosecres','secretarias'));
+        //return view('sueldosecre.index',compact('sueldosecres','secretarias'));
+
+       $sueldosecres=sueldosecre::paginate(5);
+        $secretarias=secretaria::all();   
+          $response = response()->view('sueldosecre.index',compact('sueldosecres','secretarias'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+          return $response;
+
     }
 
     /**

@@ -82,11 +82,20 @@ class AdelantosecreController extends Controller
     }
     public function index()
     {
-        $adelantosecres=adelantosecre::paginate(10);
-        $secretarias=secretaria::all();
-        // return profesor::with('sueldopro')->get(); 
-         //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('adelantosecre.index',compact('adelantosecres','secretarias'));
+       // $adelantosecres=adelantosecre::paginate(10);
+       // $secretarias=secretaria::all();
+                // return profesor::with('sueldopro')->get(); 
+                //$datos['sueldopros']=sueldopro::paginate(7);
+      // return view('adelantosecre.index',compact('adelantosecres','secretarias'));
+
+          $adelantosecres=adelantosecre::paginate(5);   
+          $secretarias=secretaria::all(); 
+          $response = response()->view('adelantosecre.index',compact('adelantosecres','secretarias'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+          return $response;
+
     }
 
     /**
@@ -97,6 +106,11 @@ class AdelantosecreController extends Controller
     public function create()
     {
         return view('adelantosecre.create',['secretarias'=>secretaria::all()],['adelantosecres'=>adelantosecre::all()]);
+        /*$response = response()->view('adelantosecre.create',['secretarias'=>secretaria::all()],['adelantosecres'=>adelantosecre::all()])
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;*/
     }
 
     /**

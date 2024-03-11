@@ -83,11 +83,19 @@ class ProfesorController extends Controller
     }
     public function index()
     {   
-       $profesors=profesor::paginate(5);
-      //  $profesors=profesor::all();
-        // return profesor::with('sueldopro')->get(); 
-         //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('profesor.index',compact('profesors'));    
+       //$profesors=profesor::paginate(5);
+                    //  $profesors=profesor::all();
+                        // return profesor::with('sueldopro')->get(); 
+                        //$datos['sueldopros']=sueldopro::paginate(7);
+         //return view('profesor.index',compact('profesors'));   
+         
+         $profesors=profesor::paginate(5);    
+          $response = response()->view('profesor.index', compact('profesors'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+          return $response;
+
     }
     public function indexsecre()
     {   
@@ -135,13 +143,16 @@ class ProfesorController extends Controller
     {
         $profesor=profesor::findOrFail($id);
         $user=user::all();
-        return view('profesor.show',compact('profesor','user'));
+        //return view('profesor.show',compact('profesor','user'));
+        return response()->view('profesor.show',compact('profesor','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     public function show2($id)
     {
         $profesor=profesor::findOrFail($id);
         $user=user::all();
-        return view('profesor.show2',compact('profesor','user'));
+       // return view('profesor.show2',compact('profesor','user'));
+
+        return response()->view('profesor.show2',compact('profesor','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     /**
      * Show the form for editing the specified resource.
@@ -152,8 +163,9 @@ class ProfesorController extends Controller
     public function edit($id)
     {
         $profesor=profesor::findOrFail($id);
-        //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('profesor.edit',compact('profesor'));
+        $user=user::join('profesors','users.sprofesor_id','=',$id);
+        //return view('profesor.edit',compact('profesor'));
+        return response()->view('profesor.edit',compact('profesor','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
 

@@ -115,10 +115,17 @@ class InscripcionController extends Controller
     }
     public function index()
     {
-        $inscripcions=inscripcion::obtenerdatosde3tabla();
+        /*$inscripcions=inscripcion::obtenerdatosde3tabla();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('inscripcion.index',compact('inscripcions'));
+         return view('inscripcion.index',compact('inscripcions'));*/
+
+         $inscripcions=inscripcion::obtenerdatosde3tabla();  
+        $response = response()->view('inscripcion.index',compact('inscripcions'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**
@@ -141,7 +148,9 @@ class InscripcionController extends Controller
         $materias =materia::all();
         $aulas =aula::all();
         $periodos =periodo::all();  
-        return view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'));
+       // return view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'));
+
+        return response()->view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     /**
      * Store a newly created resource in storage.

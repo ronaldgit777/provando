@@ -66,10 +66,21 @@ class SecretariaController extends Controller
      }
     public function index()
     {   
-        $secretarias=secretaria::paginate(5);
+       
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('secretaria.index',compact('secretarias'));
+
+         /*
+         $secretarias=secretaria::paginate(5);
+         return view('secretaria.index',compact('secretarias'));*/
+///
+          $secretarias=secretaria::paginate(5);     
+          $response = response()->view('secretaria.index', compact('secretarias'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+  
+          return $response;
     }
 
     /**
@@ -109,7 +120,8 @@ class SecretariaController extends Controller
     {
         $secretaria=secretaria::findOrFail($id);
         $user=user::all();
-        return view('secretaria.show',compact('secretaria','user'));
+        //return view('secretaria.show',compact('secretaria','user'));
+        return response()->view('secretaria.show',compact('secretaria','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -122,8 +134,7 @@ class SecretariaController extends Controller
     {
         $secretaria=secretaria::findOrFail($id);
         $user=user::join('secretarias','users.secretaria_id','=',$id);
-        //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('secretaria.edit',compact('secretaria','user'));
+        return response()->view('secretaria.edit',compact('secretaria','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

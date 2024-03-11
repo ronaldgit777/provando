@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\aula;
 use Illuminate\Http\Request;
-
+s
 class AulaController extends Controller
 {
     /**
@@ -23,8 +23,15 @@ class AulaController extends Controller
     }
     public function index()
     {
-        $datos['aulas']=aula::paginate(5);
-        return view('aula.index',$datos);
+       /* $datos['aulas']=aula::paginate(5);
+        return view('aula.index',$datos);*/
+
+        $datos['aulas']=aula::paginate(5);   
+        $response = response()->view('aula.index',$datos)
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**
@@ -34,7 +41,8 @@ class AulaController extends Controller
      */
     public function create()
     {
-        return view('aula.create');
+       // return view('aula.create');
+        return response()->view('aula.create')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -70,9 +78,12 @@ class AulaController extends Controller
      */
     public function edit($id)
     {
-        $aula=aula::findOrFail($id);
+       /* $aula=aula::findOrFail($id);
         //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('aula.edit',compact('aula'));
+        return view('aula.edit',compact('aula'));*/
+
+        $aula=aula::findOrFail($id);
+        return response()->view('aula.edit',compact('aula'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

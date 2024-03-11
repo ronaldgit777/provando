@@ -21,8 +21,16 @@ class PeriodoController extends Controller
     }
     public function index()
     {
-        $datos['periodos']=periodo::paginate(5);
-        return view('periodo.index',$datos);
+       /* $datos['periodos']=periodo::paginate(5);
+        return view('periodo.index',$datos);*/
+
+        
+        $datos['periodos']=periodo::paginate(5); 
+        $response = response()->view('periodo.index',$datos)
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**
@@ -32,7 +40,8 @@ class PeriodoController extends Controller
      */
     public function create()
     {
-        return view('periodo.create');
+        //return view('periodo.create');
+        return response()->view('periodo.create')->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**
@@ -68,9 +77,12 @@ class PeriodoController extends Controller
      */
     public function edit($id)
     {
-        $periodo=periodo::findOrFail($id);
+        /*$periodo=periodo::findOrFail($id);
         //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('periodo.edit',compact('periodo'));
+        return view('periodo.edit',compact('periodo'));*/
+
+        $periodo=periodo::findOrFail($id);
+        return response()->view('periodo.edit',compact('periodo'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

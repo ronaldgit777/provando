@@ -245,13 +245,29 @@ class AsignarpromaController extends Controller
         $periodos =periodo::obtenerperiodopro($userid);
         //$asignarpromas=asignarproma::all();
         //return view('auth.registroEmpleado');
-        return view('asignarproma.asigpro',compact('asignarpromas','materias','aulas','periodos'));
+        /*return view('asignarproma.asigpro',compact('asignarpromas','materias','aulas','periodos'));*/
+
+        $response = response()->view('asignarproma.asigpro',compact('asignarpromas','materias','aulas','periodos'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+
+        return $response;
+  
     }
     public function index()
     {   //$asignarpromas=asignarproma::where('estado', 'activo')->get();
        // $asignarpromas=asignarproma::all();
-        $asignarpromas=asignarproma::obtenerdatosde3tablaas();
-        return view('asignarproma.index',compact('asignarpromas'));
+        /*$asignarpromas=asignarproma::obtenerdatosde3tablaas();
+        return view('asignarproma.index',compact('asignarpromas'));*/
+
+        $asignarpromas=asignarproma::obtenerdatosde3tablaas();    
+          $response = response()->view('asignarproma.index',compact('asignarpromas'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+  
+          return $response;
     }
 
 
@@ -269,7 +285,10 @@ class AsignarpromaController extends Controller
         $periodos = periodo::all();
         $users = user::all();
         $asignarpromas = asignarproma::all();
-        return view('asignarproma.create', compact('profesors', 'materias', 'aulas', 'periodos', 'users','asignarpromas'));
+       // return view('asignarproma.create', compact('profesors', 'materias', 'aulas', 'periodos', 'users','asignarpromas'));
+
+        return response()->view('asignarproma.create', compact('profesors', 'materias', 'aulas', 'periodos', 'users','asignarpromas'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     
@@ -309,7 +328,11 @@ class AsignarpromaController extends Controller
         $profesor=profesor::all();
         $aula=aula::all();
         $periodo=periodo::all();
-        return view('asignarproma.show',compact('asignarproma','user','materia','profesor','aula','periodo'));
+        //return view('asignarproma.show',compact('asignarproma','user','materia','profesor','aula','periodo'));
+
+        return response()->view('asignarproma.show',compact('asignarproma','user','materia','profesor','aula','periodo'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
+        
     }
 
     /**
@@ -326,7 +349,10 @@ class AsignarpromaController extends Controller
         $aula=aula::all();
         $periodo=periodo::all();
         //$sueldopro=sueldopro::get()->where('$id','=','12');
-        return view('asignarproma.edit',compact('asignarproma','materia','profesor','aula','periodo'));
+        //return view('asignarproma.edit',compact('asignarproma','materia','profesor','aula','periodo'));
+
+       
+        return response()->view('asignarproma.edit',compact('asignarproma','materia','profesor','aula','periodo'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
         
     }
 
