@@ -205,7 +205,9 @@ class AsignarpromaController extends Controller
         $periodos =periodo::all();
         //$asignarpromas =asignarproma::where('estado','activo')->get();
         $asignarpromas =asignarproma::obtenerdatosde3tabla();
-        return view('asignarproma.reporasigsecre',compact('asignarpromas','profesors','materias','aulas','periodos'));
+      //  return view('asignarproma.reporasigsecre',compact('asignarpromas','profesors','materias','aulas','periodos'));
+        return response()->view('asignarproma.reporasigsecre',compact('asignarpromas','profesors','materias','aulas','periodos'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
+   
     }
     public function reporasig()
     {  
@@ -216,7 +218,8 @@ class AsignarpromaController extends Controller
         $periodos =periodo::all();
         //$asignarpromas =asignarproma::where('estado','activo')->get();        9
         $asignarpromas =asignarproma::obtenerdatosde3tabla();
-        return view('asignarproma.reporasig',compact('asignarpromas','profesors','materias','aulas','periodos'));
+       // return view('asignarproma.reporasig',compact('asignarpromas','profesors','materias','aulas','periodos'));
+        return response()->view('asignarproma.reporasig',compact('asignarpromas','profesors','materias','aulas','periodos'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
     }
     public function reporteasigproreporte()
     {
@@ -230,7 +233,14 @@ class AsignarpromaController extends Controller
         $periodos =periodo::obtenerperiodoproreporte($userid);
         //$asignarpromas=asignarproma::all();
         //return view('auth.registroEmpleado');
-        return view('asignarproma.asigproreporte',compact('asignarpromas','materias','aulas','periodos'));
+       /* return view('asignarproma.asigproreporte',compact('asignarpromas','materias','aulas','periodos'));*/
+
+        $response = response()->view('asignarproma.asigproreporte',compact('asignarpromas','materias','aulas','periodos'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+
+        return $response;
     }
     
     public function index2()

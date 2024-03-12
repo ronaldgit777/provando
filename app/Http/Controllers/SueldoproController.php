@@ -47,14 +47,22 @@ class SueldoproController extends Controller
         $profesors=profesor::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('sueldopro.reporsupro',compact('sueldopros','profesors'));
+        /* return view('sueldopro.reporsupro',compact('sueldopros','profesors'));*/
+         return response()->view('sueldopro.reporsupro',compact('sueldopros','profesors'))->header('Cache-Control', 'no-cache, no-store, must-revalidate'); 
     }
     public function index()
     {
-        $sueldopros=sueldopro::paginate(5);
+        $sueldopros=sueldopro::paginate(1);
         $profesors=profesor::all();
         return view('sueldopro.index',compact('sueldopros','profesors'));
 
+       /* $sueldopros=sueldopro::paginate(1);
+        $profesors=profesor::all();  
+          $response = response()->view('sueldopro.index',compact('sueldopros','profesors'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+          ->header('Pragma', 'no-cache') // HTTP 1.0.
+          ->header('Expires', '0'); // Proxies.
+          return $response;*/
         
     }
 
@@ -70,7 +78,15 @@ class SueldoproController extends Controller
         //$profesors=profesor::pluck('nombre','id');
        // return view('sueldopro.create',compact('profesors'));
 
-        return view('sueldopro.create',['profesors'=>profesor::all()],['adelantopros'=>adelantopro::all()]);
+        //return view('sueldopro.create',['profesors'=>profesor::all()],['adelantopros'=>adelantopro::all()]);
+
+        $adelanadelantopros=adelantopro::all();  
+        $profesors=profesor::all(); 
+        $response = response()->view('sueldopro.create',compact('adelantopros','profesors'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**

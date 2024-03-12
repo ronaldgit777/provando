@@ -43,7 +43,7 @@
             <thead class="thead-light">
               <tr>
                              {{-- <th>#</th> --}}
-                            <th scope="col"> Fecha de Pago</th>
+                            <th scope="col"> Fecha de Pagoasa</th>
                             <th scope="col"> Mes</th>
                             <th scope="col">Sueldo</th>
                             <th scope="col">Total Descuento</th>

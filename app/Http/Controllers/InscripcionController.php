@@ -95,7 +95,9 @@ class InscripcionController extends Controller
         $asignarpromas =asignarproma::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
+        // return view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
+         return response()->view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     public function index2()
     {
@@ -112,7 +114,9 @@ class InscripcionController extends Controller
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
          return view('inscripcion.reporprofealumno',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
-    }
+         /*return response()->view('inscripcion.reporprofealumno',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');*/
+        }
     public function index()
     {
         /*$inscripcions=inscripcion::obtenerdatosde3tabla();
@@ -203,7 +207,10 @@ class InscripcionController extends Controller
         $profesor=profesor::all();
         $aula=aula::all();
         $periodo=periodo::all();
-        return view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'));
+       // return view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'));
+
+        return response()->view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

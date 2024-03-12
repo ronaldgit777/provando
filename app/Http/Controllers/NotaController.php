@@ -101,7 +101,13 @@ class NotaController extends Controller
        // $alumnos=alumno::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('nota.notasproreporte',compact('alumnos','materias','aulas','periodos','usuario'   ));
+         //return view('nota.notasproreporte',compact('alumnos','materias','aulas','periodos','usuario'   ));
+
+         $response = response()->view('nota.notasproreporte',compact('alumnos','materias','aulas','periodos','usuario'   ))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+         ->header('Pragma', 'no-cache') // HTTP 1.0.
+         ->header('Expires', '0'); // Proxies.
+         return $response;
          
     }
     public function notasreporte()
@@ -117,7 +123,9 @@ class NotaController extends Controller
        // $alumnos=alumno::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('nota.notasreporte',compact('alumnos','materias','aulas','periodos','usuario'   ));
+        // return view('nota.notasreporte',compact('alumnos','materias','aulas','periodos','usuario'   ));
+         return response()-> view('nota.notasreporte',compact('alumnos','materias','aulas','periodos','usuario'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate'); 
          
     }
     public function notasreportesecre()
@@ -149,7 +157,9 @@ class NotaController extends Controller
        // $alumnos=alumno::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('nota.notasreportesecre',compact('alumnos','materias','aulas','periodos','usuariosecre', 'usuario'  ));
+        // return view('nota.notasreportesecre',compact('alumnos','materias','aulas','periodos','usuariosecre','usuario'));
+         return response()->view('nota.notasreportesecre',compact('alumnos','materias','aulas','periodos','usuariosecre','usuario'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate'); 
          
     }
     public function  obtenerfechainicionotareporte(Request $request)
@@ -176,7 +186,9 @@ class NotaController extends Controller
         $actividads =actividad::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('nota.repornota',compact('notas','alumnos','materias','actividads','profesors'));   
+         //return view('nota.repornota',compact('notas','alumnos','materias','actividads','profesors')); 
+         return response()->view('nota.repornota',compact('notas','alumnos','materias','actividads','profesors'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
     }
     public function  obtenerfechainicionota(Request $request)
     {   

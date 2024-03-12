@@ -58,11 +58,13 @@ class SecretariaController extends Controller
      public function reporsecres()
      {   
          $secretarias = secretaria::obtenerSecretariasConRutaImagen();
-         return view('secretaria.reporsecre', compact('secretarias'));    
+         //return view('secretaria.reporsecre', compact('secretarias'));    
+         return response()->view('secretaria.reporsecre', compact('secretarias'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
      }
      public function opcionesreportesecre()
      {   
-          return view('secretaria.reporsecretarias');    
+         // return view('secretaria.reporsecretarias');  
+          return response()->view('secretaria.reporsecretarias')->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
      }
     public function index()
     {   
@@ -79,7 +81,6 @@ class SecretariaController extends Controller
           ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
           ->header('Pragma', 'no-cache') // HTTP 1.0.
           ->header('Expires', '0'); // Proxies.
-  
           return $response;
     }
 

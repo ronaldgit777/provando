@@ -75,11 +75,13 @@ class ProfesorController extends Controller
      {   
          $profesors = Profesor::obtenerProfesoresConRutaImagen();
          $user=user::all();
-         return view('profesor.reporpro', compact('profesors','user'));    
+        // return view('profesor.reporpro', compact('profesors','user'));  
+         return response()->view('profesor.reporpro', compact('profesors','user'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
      }
     public function opcionesreporte()
     {   
-         return view('profesor.reporopciones');    
+        // return view('profesor.reporopciones');   
+         return response()->view('profesor.reporopciones')->header('Cache-Control', 'no-cache, no-store, must-revalidate'); 
     }
     public function index()
     {   
@@ -99,11 +101,18 @@ class ProfesorController extends Controller
     }
     public function indexsecre()
     {   
-       $profesors=profesor::paginate(5);
+      /* $profesors=profesor::paginate(5);
       //  $profesors=profesor::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('profesor.indexsecre',compact('profesors'));    
+         return view('profesor.indexsecre',compact('profesors')); */   
+
+         $profesors=profesor::paginate(5);    
+         $response = response()->view('profesor.indexsecre', compact('profesors'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+         ->header('Pragma', 'no-cache') // HTTP 1.0.
+         ->header('Expires', '0'); // Proxies.
+         return $response;
     }
 
     /**
@@ -114,7 +123,13 @@ class ProfesorController extends Controller
     public function create()
     {
         //return view('profesor.create');
-        return view('profesor.create',['users'=>User::all()]);
+//        return view('profesor.create',['users'=>User::all()]);
+
+        $response = response()->view('profesor.create',['users'=>User::all()])
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**

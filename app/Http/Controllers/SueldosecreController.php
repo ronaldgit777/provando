@@ -48,7 +48,8 @@ class SueldosecreController extends Controller
         $secretarias=secretaria::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('sueldosecre.reporsusecre',compact('sueldosecres','secretarias'));
+         /*return view('sueldosecre.reporsusecre',compact('sueldosecres','secretarias'));*/
+         return response()->view('sueldosecre.reporsusecre',compact('sueldosecres','secretarias'))->header('Cache-Control', 'no-cache, no-store, must-revalidate'); 
     }
     public function index()
     {
@@ -75,7 +76,15 @@ class SueldosecreController extends Controller
      */
     public function create()
     {
-        return view('sueldosecre.create',['secretarias'=>secretaria::all()],['adelantosecres'=>adelantosecre::all()]);
+        //return view('sueldosecre.create',['secretarias'=>secretaria::all()],['adelantosecres'=>adelantosecre::all()]);
+
+        $adelantosecres=adelantosecre::all();  
+        $secretarias=secretaria::all(); 
+        $response = response()->view('sueldosecre.create',compact('adelantosecres','secretarias'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**
