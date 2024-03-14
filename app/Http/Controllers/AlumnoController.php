@@ -63,7 +63,15 @@ class AlumnoController extends Controller
        // $alumnos=alumno::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('alumno.alumpro',compact('alumnos','materias','aulas','periodos','actividads','usuario','userid','notas'));
+        // return view('alumno.alumpro',compact('alumnos','materias','aulas','periodos','actividads','usuario','userid','notas'));
+
+               
+         
+        $response = response()->view('alumno.alumpro',compact('alumnos','materias','aulas','periodos','actividads','usuario','userid','notas'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
          
     }
      public function alumproreporte()
@@ -88,7 +96,9 @@ class AlumnoController extends Controller
         // $alumnos=alumno::all();
          // return profesor::with('sueldopro')->get(); 
           //$datos['sueldopros']=sueldopro::paginate(7);
-          return view('alumno.alumproreporte',compact('alumnos','materias','aulas','periodos','usuario'));
+         // return view('alumno.alumproreporte',compact('alumnos','materias','aulas','periodos','usuario'));
+          return response()->view('alumno.alumproreporte',compact('alumnos','materias','aulas','periodos','usuario'))
+          ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
           
      }
      public function opcionesreportealumno()
@@ -96,7 +106,9 @@ class AlumnoController extends Controller
          $alumnos=alumno::all();
          // return profesor::with('sueldopro')->get(); 
           //$datos['sueldopros']=sueldopro::paginate(7);
-          return view('alumno.reporopcionesalu',compact('alumnos'));
+         // return view('alumno.reporopcionesalu',compact('alumnos'));
+          return response()->view('alumno.reporopcionesalu',compact('alumnos'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
           
      }
      public function  obtenerfechainicioreporalusecre(Request $request)
@@ -150,7 +162,13 @@ class AlumnoController extends Controller
          $alumnos=alumno::obteneralumnosConRutaImagen();
          // return profesor::with('sueldopro')->get(); 
           //$datos['sueldopros']=sueldopro::paginate(7);
-          return view('alumno.reporalusecre',compact('alumnos'));
+         // return view('alumno.reporalusecre',compact('alumnos'));
+          
+         $response = response()->view('alumno.reporalusecre',compact('alumnos'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+         ->header('Pragma', 'no-cache') // HTTP 1.0.
+         ->header('Expires', '0'); // Proxies.
+         return $response;
           
      }
      public function reporalu()
@@ -158,8 +176,9 @@ class AlumnoController extends Controller
          $alumnos=alumno::obteneralumnosConRutaImagen();
          // return profesor::with('sueldopro')->get(); 
           //$datos['sueldopros']=sueldopro::paginate(7);
-          return view('alumno.reporalu',compact('alumnos'));
-          
+         // return view('alumno.reporalu',compact('alumnos'));
+         return response()->view('alumno.reporalu',compact('alumnos'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
      }
     public function index()
     {

@@ -79,16 +79,27 @@ class AdelantoproController extends Controller
         $profesors=profesor::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('adelantopro.reporadepro',compact('adelantopros','profesors'));
+        /* return view('adelantopro.reporadepro',compact('adelantopros','profesors'));*/
+         return response()->view('adelantopro.reporadepro',compact('adelantopros','profesors'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');  
     }
     
     public function index()
     {
         $adelantopros=adelantopro::paginate(10);
         $profesors=profesor::all();
-        // return profesor::with('sueldopro')->get(); 
-         //$datos['sueldopros']=sueldopro::paginate(7);
+                // return profesor::with('sueldopro')->get(); 
+              //$datos['sueldopros']=sueldopro::paginate(7);
          return view('adelantopro.index',compact('adelantopros','profesors'));
+
+
+         
+         /*$adelantopros=adelantodispopro::paginate(5);   
+         $profesors=profesor::all(); 
+         $response = response()->view('adelantopro.index',compact('adelantopros','profesors'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+         ->header('Pragma', 'no-cache') // HTTP 1.0.
+         ->header('Expires', '0'); // Proxies.
+         return $response;*/
     }
 
     /**
@@ -98,7 +109,23 @@ class AdelantoproController extends Controller
      */
     public function create()
     {
-        return view('adelantopro.create',['profesors'=>profesor::all()],['adelantopros'=>adelantopro::all()]);
+       // return view('adelantopro.create',['profesors'=>profesor::all()],['adelantopros'=>adelantopro::all()]);
+
+        
+        /*$profesors=profesor::all();
+        $response = response()->view('adelantopro.create',['profesors'=>profesor::all()],['adelantopros'=>adelantopro::all()])
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;*/
+
+        $adelantopros=adelantopro::all();  
+        $profesors=profesor::all();
+        $response = response()->view('adelantopro.create',compact('adelantopros','profesors'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**

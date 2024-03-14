@@ -95,7 +95,9 @@ class InscripcionController extends Controller
         $asignarpromas =asignarproma::all();
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
+        // return view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
+         return response()->view('inscripcion.reporprofealumnosecre',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     public function index2()
     {
@@ -112,20 +114,24 @@ class InscripcionController extends Controller
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
          return view('inscripcion.reporprofealumno',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'));
-    }
+         /*return response()->view('inscripcion.reporprofealumno',compact('inscripcions','profesors','materias','aulas','periodos','alumnos','asignarpromas','alumnosapeno','alumnosapepa','alumnosapema'))
+         ->header('Cache-Control', 'no-cache, no-store, must-revalidate');*/
+        }
     public function index()
     {
-        /*$inscripcions=inscripcion::obtenerdatosde3tabla();
+        
+        $inscripcions=inscripcion::obtenerdatosde3tabla()->paginate(2);;
+        return view('inscripcion.index',compact('inscripcions'));
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);
-         return view('inscripcion.index',compact('inscripcions'));*/
+         
 
-         $inscripcions=inscripcion::obtenerdatosde3tabla();  
+        /* $inscripcions=inscripcion::obtenerdatosde3tabla();  
         $response = response()->view('inscripcion.index',compact('inscripcions'))
         ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
         ->header('Pragma', 'no-cache') // HTTP 1.0.
         ->header('Expires', '0'); // Proxies.
-        return $response;
+        return $response;*/
     }
 
     /**
@@ -148,9 +154,9 @@ class InscripcionController extends Controller
         $materias =materia::all();
         $aulas =aula::all();
         $periodos =periodo::all();  
-       // return view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'));
+       return view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'));
 
-        return response()->view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
+       // return response()->view('inscripcion.create', compact('asignarpromas','alumnos','profesors', 'users', 'materias', 'aulas', 'periodos'))->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
     /**
      * Store a newly created resource in storage.
@@ -203,7 +209,10 @@ class InscripcionController extends Controller
         $profesor=profesor::all();
         $aula=aula::all();
         $periodo=periodo::all();
-        return view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'));
+       // return view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'));
+
+        return response()->view('inscripcion.show',compact('inscripcion','alumno','asignarproma','user','materia','profesor','aula','periodo'))
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
     }
 
     /**

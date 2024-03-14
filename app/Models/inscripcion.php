@@ -87,8 +87,8 @@ class inscripcion extends Model
                 'materias.costo as materia_costo',
                 'periodos.periodo as periodo_nombre',
                 'aulas.aula as aula_nombre'
-            )
-            ->get();
+            );
+           // ->get();
     }
     public static function obtenerfecchainicioinscripcionreportesecre($fechaini,$fechafin,$profesorid2,$materiaid2,$periodoid2,$aulaid2,$alumnoid2,$ordenarins2,$mayorymenorins2,$alumnoidpa2,$alumnoidma2,$estadosecre2)
     {      

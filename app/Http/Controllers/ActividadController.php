@@ -21,8 +21,16 @@ class ActividadController extends Controller
     }
     public function index()
     {
-        $actividads['actividads']=actividad::paginate(10);
-        return view('actividad.index',$actividads);
+      /*  $actividads['actividads']=actividad::paginate(10);
+        return view('actividad.index',$actividads);*/
+
+        
+        $actividads['actividads']=actividad::paginate(5);    
+        $response = response()->view('actividad.index',$actividads)
+        ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
+        ->header('Pragma', 'no-cache') // HTTP 1.0.
+        ->header('Expires', '0'); // Proxies.
+        return $response;
     }
 
     /**

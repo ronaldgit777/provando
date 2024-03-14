@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\aula;
 use Illuminate\Http\Request;
-s
+
 class AulaController extends Controller
 {
     /**
