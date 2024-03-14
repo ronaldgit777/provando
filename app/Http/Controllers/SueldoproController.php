@@ -52,17 +52,29 @@ class SueldoproController extends Controller
     }
     public function index()
     {
+<<<<<<< HEAD
         /*$sueldopros=sueldopro::paginate(5);
+=======
+        $sueldopros=sueldopro::paginate(1);
+>>>>>>> d2acb78a3e5d349eec7870ebec5a38c36548fa13
         $profesors=profesor::all();
         return view('sueldopro.index',compact('sueldopros','profesors'));*/
 
+<<<<<<< HEAD
         $sueldopros=sueldopro::paginate(5);
+=======
+       /* $sueldopros=sueldopro::paginate(1);
+>>>>>>> d2acb78a3e5d349eec7870ebec5a38c36548fa13
         $profesors=profesor::all();  
           $response = response()->view('sueldopro.index',compact('sueldopros','profesors'))
           ->header('Cache-Control', 'no-cache, no-store, must-revalidate') // HTTP 1.1.
           ->header('Pragma', 'no-cache') // HTTP 1.0.
           ->header('Expires', '0'); // Proxies.
+<<<<<<< HEAD
           return $response;
+=======
+          return $response;*/
+>>>>>>> d2acb78a3e5d349eec7870ebec5a38c36548fa13
         
     }
 

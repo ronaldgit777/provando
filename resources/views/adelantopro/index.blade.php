@@ -127,7 +127,7 @@
                                   ' <td>'+value.monto+'</td>'+
                                   ' <td>'+value.estadoade+'</td>'+
                                   ' <td>'+value.observacion+'</td>'+
-                                  '<td>'+value.nombre_profesor+"-"+value.apellidopaterno+"-"+value.apellidomaterno+'</td>'+
+                                  '<td>'+value.nombre_profesor+"-"+value.apellidopaternoprofesor+"-"+value.apellidomaternoprofesor+'</td>'+
                                   // ' <td>'+
                                   //   // '<a href="/proyecto/public/profesor/' + value.id + '/edit" method="post" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i></a>' +
                                   //   '<a href="/proyecto/public/profesor/' + value.id + '/" method="post" class="btn btn-sm btn-danger"> <i class="fas fa-print"></i></a>'+
