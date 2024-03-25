@@ -52,7 +52,7 @@
                   <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                           <a class="nav-link " href="{{ url('/profesor') }}" style="color: #ECECEC;">
-                            <i class="fas fa-chalkboard-teacher text-info"></i> profesores
+                            <i class="fas fa-chalkboard-teacher text-info"></i> Profesores
                           </a>      
                       </li>
                       <li class="nav-item">
@@ -96,7 +96,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link " href="{{ url('/inscripcion') }}" style="color: #ECECEC;">
-                <i class="far fa-map text-info"></i>Inscripcion
+                <i class="far fa-map text-info"></i>Inscripción
               </a>
             </li>
           
@@ -108,7 +108,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('logout')}}"
                 onclick="event.preventDefault(); document.getElementById('formlogout').submit();" style="color: #ECECEC;">
-                <i class="fas fa-sign-in-alt text-danger"></i> Cerrar Sessión
+                <i class="fas fa-sign-in-alt text-danger"></i> Cerrar Sesión
               </a>
               <form action="{{route('logout')}}" method="POST" style="display: none" id="formlogout" >
                 @csrf
@@ -181,7 +181,7 @@
 <li class="nav-item">
 <a class="nav-link" href="{{route('logout')}}"
   onclick="event.preventDefault(); document.getElementById('formlogout').submit();" style="color: #ECECEC;">
-  <i class="fas fa-sign-in-alt text-danger"></i> Cerrar Sessión
+  <i class="fas fa-sign-in-alt text-danger"></i> Cerrar Sesión
 </a>
 <form action="{{route('logout')}}" method="POST" style="display: none" id="formlogout" >
   @csrf
@@ -242,7 +242,7 @@
            <li class="nav-item">
             <a class="nav-link " href="{{ url('/asigpro') }}" style="color: #ECECEC;">
             <i class="fas fa-bed text-info"></i>
-            <span class="nav-link-inner">Ver Materias Asisgnadas</span>
+            <span class="nav-link-inner">Ver Materias Asignadas</span>
             </a>
           </li>
              
@@ -255,7 +255,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('logout')}}"
             onclick="event.preventDefault(); document.getElementById('formlogout').submit();" style="color: #ECECEC;">
-            <i class="fas fa-sign-in-alt text-danger "></i> Cerrar Sessión
+            <i class="fas fa-sign-in-alt text-danger "></i> Cerrar Sesión
           </a>
           <form action="{{route('logout')}}" method="POST" style="display: none" id="formlogout" >
             @csrf

@@ -11,7 +11,7 @@
                 <div class="col text-right">
                     <a href="{{url('periodo/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
                 </div>
             </div>
@@ -27,13 +27,13 @@
                                                         <label class=" text-capitalize">periodo</label>
                                             </div>
                                             <div class="col-8 col-md-9">
-                                                            {{-- <select type="text" name="periodo" id="periodo" class="form-control" required>
-                                                                <option selected disabled value="">seleccione el periodo</option>
-                                                            <option value="manana">mañana</option> 
-                                                            <option value="tarde">tarde</option> 
-                                                            <option value="noche">noche</option> 
-                                                            </select><br> --}}
-                                                            <input type="text" name="periodo" id="periodo" class="form-control" required> <br>
+                                                             <select type="text" name="periodo" id="periodo" class="form-control" required>
+                                                                <option selected disabled value="">Seleccione el Periodo</option>
+                                                            <option value="manana" >Mañana</option> 
+                                                            <option value="tarde">Tarde</option> 
+                                                            <option value="noche">Noche</option> 
+                                                            </select><br> 
+                                                            <!-- <input type="text" name="periodo" id="periodo" class="form-control" required> <br> -->
                                             </div>
                                         </div>
                                     </div>    
@@ -55,7 +55,7 @@
                                         </div>
                                     </div>                        
                                     <div class="col-12 col-sm-12 col-md-12">
-                                                <input type="submit" value="guardar datos" class="btn btn-primary">
+                                                <input type="submit" value="Guardar Datos" class="btn btn-primary">
                                     </div>                                       
                         </div>
                     </div>

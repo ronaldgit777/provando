@@ -75,13 +75,13 @@
                 <th scope="col">materia</th>
                 <th scope="col">periodo</th>
                 <th scope="col">aula</th>
-                <th scope="col">fechadeingreso</th>
+                <th scope="col">fecha de ingreso</th>
                 <th scope="col">ci</th>
                 <th scope="col">nombre</th>
-                <th scope="col">apellidopaterno</th>
-                <th scope="col">apellidomaterno</th>
+                <th scope="col">apellido paterno</th>
+                <th scope="col">apellido materno</th>
                 <th scope="col">celular</th>
-                <th scope="col">direccion</th>
+                <th scope="col">dirección</th>
                 <th scope="col">correo</th>
                 <th scope="col">estado</th>
                 <th scope="col">imagen</th>

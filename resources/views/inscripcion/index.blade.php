@@ -49,7 +49,7 @@
                                     <thead class="thead-light">
                                 <tr>
                                     {{-- <th>#</th> --}}
-                                    <th>fecha de inscripcion</th>
+                                    <th>fecha de inscripción</th>
                                     {{-- <th>asignarproma</th> --}}
                                     <th>profesor</th>
                                     <th>materia</th>

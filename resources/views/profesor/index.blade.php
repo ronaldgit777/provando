@@ -56,7 +56,7 @@
                 <th scope="col">Apellido Paterno</th>
                 <th scope="col">Apellido Materno</th>
                 <th scope="col">Celular</th>
-                <th scope="col">Direccion</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Imagen</th>

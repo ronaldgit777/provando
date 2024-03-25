@@ -10,7 +10,7 @@
                     <h3 class="mb-0">REGISTRAR NUEVO ADELANTO DE SECRETARIA</h3>
                 </div>
                 <div class="col text-right">
-                    <a href="{{url('adelantosecre/')}}" class="btn btn-sm btn-success">
+                    <a href="{{url('adelantosecre/')}}" class="btn btn-sm btn-success text text-capitalize">
                         <i class="fas fa-undo"></i>
                         regresar</a>
                 </div>
@@ -29,7 +29,7 @@
                                           <label class="text-black text-capitalize">fecha de adelanto</label>
                                       </div>
                                         <div class="col-8 col-md-9">
-                                          <input class="form-control" placeholder="fechaadelantopro" type="date" name="fechaadelantosecre"  value="<?php echo $fcha; ?>" id="fechaadelantosecre" >
+                                          <input class="form-control" placeholder="fechaadelantopro" type="date" name="fechaadelantosecre"  value="<?php echo $fcha; ?>" id="fechaadelantosecre" readonly>
                                         </div>
                                   </div>
                                 </div>
@@ -40,8 +40,8 @@
                                           <label class="text text-capitalize" >secretaria</label>
                                       </div>
                                       <div class="col-8 col-md-9">
-                                          <select type="text" name="secretaria_id" id="secretaria_id" class="form-control" required>
-                                              <option selected disabled value="">seleccione a la secretaria</option>
+                                          <select type="text" name="secretaria_id" id="secretaria_id" class="form-control text text-capitalize" " required>
+                                              <option selected disabled value=""  class="text text-capitalize" >seleccione a la secretaria</option>
                                               @foreach ($secretarias as $secretaria)
                                               <option value="{{ $secretaria->id }}">{{ $secretaria->nombre." ".$secretaria->apellidopaterno." ".$secretaria->apellidomaterno}}</option>
                                               @endforeach
@@ -139,7 +139,7 @@
                                           <label class="text text-capitalize">observación</label>
                                       </div>
                                         <div class="col-8 col-md-9">
-                                          <input class="form-control" placeholder="observacion" type="observacion" name="observacion" autocomplete="observacion" id="observacion" required  > 
+                                          <input class="form-control" placeholder="Ingrese una observación" type="observacion" name="observacion" autocomplete="observacion" id="observacion" required  > 
                                         </div>
                                   </div>
                                 </div>
@@ -147,7 +147,7 @@
                                   <div class="col-12 col-sm-12 col-md-6">
                                       <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                           <div class="col-12 col-md-12 " >
-                                            <center><input type="submit" value="guardar datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonadelanto" disabled></center>
+                                            <center><input type="submit" value="guardar datos" class="btn btn-primary text text-capitalize" " onclick="generarpdfadelanto()"  id="botonadelanto" disabled></center>
                                           </div>
                                       </div>
                                   </div>

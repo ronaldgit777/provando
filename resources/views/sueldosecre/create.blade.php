@@ -12,7 +12,7 @@
                 <div class="col text-right">
                     <a href="{{url('sueldosecre/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                                         </div>
                                     <div class="col-8 col-md-9">
                                         <select type="text" name="secretaria_id" id="secretaria_id" class="form-control" required>
-                                            <option selected disabled value="">seleccione a la secretaria</option>
+                                            <option selected disabled value="">Seleccione a la Secretaria</option>
                                             @foreach ($secretarias as $secretaria)
-                                            <option value="{{ $secretaria->id }}">{{ $secretaria->nombre." ".$secretaria->apellidopaterno." ".$secretaria->apellidomaterno}}</option>
+                                            <option value="{{ $secretaria->id }}" class=" text-capitalize">{{ $secretaria->nombre." ".$secretaria->apellidopaterno." ".$secretaria->apellidomaterno}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -45,7 +45,7 @@
                                          <label class="text text-capitalize">fecha de pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="date" name="fechadesueldo" id="fechadesueldo" class="form-control" value="<?php echo $fcha; ?>" > <br>
+                                        <input type="date" name="fechadesueldo" id="fechadesueldo" class="form-control" value="<?php echo $fcha; ?>" readonly> <br>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                         <label class="text text-capitalize" >mes de pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                         <select type="text" name="mesdepago" id="mesdepago" class="form-control">
+                                         <select type="text" name="mesdepago" id="mesdepago" class="form-control text text-capitalize">
                                             <option value="enero">enero</option>
                                             <option value="febrero">febrero</option>
                                             <option value="marzo">marzo</option>
@@ -78,7 +78,7 @@
                                         <label class="text text-capitalize">sueldo</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text"  id="sueldo" class="form-control"  value=""  readonly> 
+                                        <input type="text"  id="sueldo" class="form-control" placeholder="Sueldo" value=""  readonly> 
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                         <label class="text text-capitalize">total descuento</label>
                                     </div>
                                     <div class="col-8 col-md-6">
-                                        <input type="text" name="totaldescuento" id="totaldescuento" class="form-control" readonly> <br>
+                                        <input type="text" name="totaldescuento" id="totaldescuento" class="form-control" placeholder="Total Descuento" readonly> <br>
                                     </div>
                                             <div class="col-8 col-md-3">
                                                 <a href="" class="btn btn-success disabled" data-toggle="modal" data-target="#myModal2" onclick="veradelantos()" id="bosecre" > 
@@ -140,24 +140,24 @@
                                         <label class="text text-capitalize">total pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text" name="totalpago" id="totalpago" class="form-control" readonly> <br>
+                                        <input type="text" name="totalpago" id="totalpago" class="form-control" readonly placeholder="Total Pago"> <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6">
                                 <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                     <div class="col-4 col-md-3">
-                                        <label class="text text-capitalize">observacion</label>
+                                        <label class="text text-capitalize">observación</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text" name="observacion" id="observacion" class="form-control" required> <br>
+                                        <input type="text" name="observacion" id="observacion" class="form-control" required placeholder="ingrese una observación"> <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6">
                                 <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                     <div class="col-12 col-md-12 " >
-                                        <center><input type="submit" value="guardar datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonguardar" disabled></center>
+                                        <center><input type="submit" value="Guardar Datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonguardar" disabled></center>
                                     </div>
                                 </div>
                             </div>

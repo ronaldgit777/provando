@@ -119,7 +119,7 @@
           <th scope="col" data-column="apellidopaterno" class="sortable">apellido paterno</th>
           <th scope="col" data-column="apellidomaterno" class="sortable">apellido materno</th>
           <th scope="col" data-column="celular" class="sortable">celular</th>
-          <th scope="col" data-column="direccion" class="sortable">direccion</th>
+          <th scope="col" data-column="direccion" class="sortable">dirección</th>
           <th scope="col" data-column="direccion" class="sortable">correo</th>
           <th scope="col" data-column="estado" class="sortable">estado</th>
           <th scope="col">imagen</th>

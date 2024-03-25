@@ -215,8 +215,6 @@
 @endif
 
 <script>
-
-
     $(document).ready(function() {
                 $('#alumno_id').on('change', function() {
 

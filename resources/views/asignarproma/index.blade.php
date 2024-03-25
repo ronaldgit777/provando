@@ -38,7 +38,7 @@
                                   {{-- <button class="btn btn-danger  btn-sm " type="button"><i class="fas fa-print"></i>imprimir</button> --}}
                                   <a href="{{url('asignarproma/create')}}" class="btn btn-sm btn-primary text-capitalize" >
                                     <i class="fas fa-plus-circle"></i>
-                                    agregar nueva asignacion</a>
+                                    agregar nueva asignación</a>
                               </div>  
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                     <thead class="thead-light">
                                 <tr>
                                     {{-- <th>#</th> --}}
-                                    <th>fecha de asignacion</th>
+                                    <th>fecha de asignación</th>
                                     <th>profesor</th>
                                     <th>materia</th>
                                     <th>costo</th>

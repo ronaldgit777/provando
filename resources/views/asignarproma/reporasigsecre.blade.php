@@ -100,7 +100,7 @@
                         <thead class="thead-light">
                     <tr>
                         {{-- <th>#</th> --}}
-                        <th>fecha de asignacion</th>
+                        <th>fecha de asignación</th>
                         <th>profesor</th>
                         <th>materia</th>
                         <th>costo</th>

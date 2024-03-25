@@ -188,7 +188,7 @@ class AsignarpromaController extends Controller
        $alumnoid2 = $request->input('alumnoid');
        $resultadoconsulta = asignarproma::obtenermateriaprofesorid($profesorid2, $alumnoid2);
        return response()->json($resultadoconsulta); 
-    }
+    } 
     public function obtenerprofesoresid(Request $request)
     {  
        $alumnoid2 = $request->input('alumnoid');

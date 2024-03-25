@@ -120,11 +120,11 @@
                     <label class="text-primary text-capitalize">ordenar</label>
                     <div class="input-group">
                       <select type="text" name="ordenar" id="ordenar" class="form-control">
-                        <option value="fechadeingreso">fechadeingreso</option> 
+                        <option value="fechadeingreso">fecha de ingreso</option> 
                         <option value="ci">ci</option> 
                         <option value="nombre_alumno">nombre</option> 
-                        <option value="apellidopaterno">apellidopaterno</option> 
-                        <option value="apellidomaterno">apellidomaterno</option> 
+                        <option value="apellidopaterno">apellido paterno</option> 
+                        <option value="apellidomaterno">apellido materno</option> 
                         <option value="materias.materia">materias</option> 
                         <option value="promedio_notas">promedio</option> 
                         <option value="aulas.aula">aulas</option> 
@@ -148,11 +148,11 @@
             <thead class="thead-light">
               <tr>
                 {{-- <th scope="col">id alum</th> --}}
-                <th scope="col">fechadeingreso</th>
+                <th scope="col">fecha de ingreso</th>
                 <th scope="col">ci</th>
                 <th scope="col">nombre</th>
-                <th scope="col">apellidopaterno</th>
-                <th scope="col">apellidomaterno</th>
+                <th scope="col">apellido paterno</th>
+                <th scope="col">apellido materno</th>
                 <th scope="col">materia</th>
                 <th scope="col">promedio</th>
                 {{-- <th scope="col">materia costo</th> --}}

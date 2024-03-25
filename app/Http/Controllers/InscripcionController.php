@@ -120,7 +120,7 @@ class InscripcionController extends Controller
     public function index()
     {
         
-        $inscripcions=inscripcion::obtenerdatosde3tabla()->paginate(2);;
+        $inscripcions=inscripcion::obtenerdatosde4tabla()->paginate(3);;//redireccionamor a 4tabla porque ahi esta para paginar
         return view('inscripcion.index',compact('inscripcions'));
         // return profesor::with('sueldopro')->get(); 
          //$datos['sueldopros']=sueldopro::paginate(7);

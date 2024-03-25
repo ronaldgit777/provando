@@ -58,10 +58,10 @@
                             </select>
                         </div>
                       <div class="col text-right">
-                        <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                        <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                         <a href="{{url('home')}}" class="btn btn-sm btn-success" >
                         <i class="fas fa-plus-circle"></i>
-                        regresar</a>
+                        Regresar</a>
                     </div>  
               </div>
               @php
@@ -152,11 +152,11 @@
             <thead class="thead-light">
               <tr>
                 {{-- <th scope="col">id alum</th> --}}
-                <th scope="col">fechadeingreso</th>
+                <th scope="col">fecha de ingreso</th>
                 <th scope="col">ci</th>
                 <th scope="col">nombre</th>
-                <th scope="col">apellidopaterno</th>
-                <th scope="col">apellidomaterno</th>
+                <th scope="col">apellido paterno</th>
+                <th scope="col">apellido materno</th>
                 <th scope="col">materia</th>
                 <th scope="col">promedio</th>
                 {{-- <th scope="col">materia costo</th> --}}

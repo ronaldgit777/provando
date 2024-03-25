@@ -11,9 +11,9 @@
                 <div class="col text-right">
                     <a href="{{url('home/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
-                </div>s
+                </div>
             </div>
                         @if($errors->any())
                         <div class="text-center text-muted mb-2">
@@ -36,7 +36,7 @@
           @csrf
          
 
-          <div class="row p-3 mb-2 " >s
+          <div class="row p-3 mb-2 " >
             <div class="col-12  " > 
                 <div class="m-portlet__body m-portlet--primary" data-portlet="true" m-portlet="true">
                       <div class="form-group m-form__group row">
@@ -109,7 +109,7 @@
                           <div class="col-12 col-sm-12 col-md-6">
                             <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                 <div class="col-4 col-md-3">
-                                    <label class="text text-capitalize" >ci</label>
+                                    <label class="text text-capitalize" >C.I.</label>
                                 </div>
                                 <div class="col-8 col-md-9">
                                     @if ($user->profesor)
@@ -126,7 +126,7 @@
                           <div class="col-12 col-sm-12 col-md-6">
                             <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                 <div class="col-4 col-md-3">
-                                    <label class="text text-capitalize">apellidopaterno</label>
+                                    <label class="text text-capitalize">apellido paterno</label>
                                 </div>
                                   <div class="col-8 col-md-9">
                                     @if ($user->profesor)
@@ -143,7 +143,7 @@
                           <div class="col-12 col-sm-12 col-md-6">
                             <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                 <div class="col-4 col-md-3">
-                                    <label class="text text-capitalize" >apellidomaterno</label>
+                                    <label class="text text-capitalize" >apellido materno</label>
                                 </div>
                                 <div class="col-8 col-md-9">
                                     @if ($user->profesor)
@@ -183,7 +183,7 @@
                           <div class="col-12 col-sm-12 col-md-6">
                             <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                 <div class="col-4 col-md-3">
-                                    <label class="text text-capitalize" >direccion</label>
+                                    <label class="text text-capitalize" >dirección</label>
                                 </div>
                                 <div class="col-8 col-md-9">
                                     @if ($user->profesor)
@@ -262,7 +262,7 @@
                                 <div class="col-8 col-md-9">
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fas fa-book"></i>
-                                        editar datos</a></button>
+                                        Editar Datos</a></button>
                                 </div>
                               </div>
                           </div>

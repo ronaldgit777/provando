@@ -10,7 +10,7 @@
             <div class="col text-right">
                 <a href="{{url('asignarproma/')}}" class="btn btn-sm btn-success">
                     <i class="fas fa-undo"></i>
-                    regresar</a>
+                    Regresar</a>
             </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                                     <label class=" text-capitalize">profesor </label>
                                 </div>
                                 <div class="col-8 col-md-9">
-                                    <select type="text" name="profesor_id" id="profesor_id" class="form-control" required>
+                                    <select type="text" name="profesor_id" id="profesor_id" class="form-control text text-capitalize"" required>
                                         @php
                                         $maximoPeriodos = $periodos->count();
                                         @endphp
@@ -40,7 +40,7 @@
 
                                             @if ($contpro < $maximoPeriodos)
                                       
-                                            <option value="{{ $profesor->id }}">{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
+                                            <option value="{{ $profesor->id }}" class="text text-capitalize">{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
                                             @endif
                                         @endforeach
                                     </select><br>
@@ -54,9 +54,9 @@
                                     <label class=" text-capitalize">materias </label>
                                 </div>
                                 <div class="col-8 col-md-9">
-                                    <select type="text" name="materia_id" id="materia_id" class="form-control">
+                                    <select type="text" name="materia_id" id="materia_id" class="form-control text text-capitalize"">
                                         @foreach ($materias as $materia)
-                                        <option value="{{ $materia->id }}">{{ $materia->materia }}</option>
+                                        <option value="{{ $materia->id }}" class="text text-capitalize">{{ $materia->materia }}</option>
                                         @endforeach
                                     </select><br>
                                 </div>
@@ -69,7 +69,7 @@
                                     <label class="text text-capitalize">aula</label>
                                 </div>
                                 <div class="col-8 col-md-9">
-                                    <select type="text" name="aula_id" id="aula_id" class="form-control">
+                                    <select type="text" name="aula_id" id="aula_id" class="form-control text text-capitalize" ">
                                     @php
                                         $maximoPeriodos = $periodos->count();
                                     @endphp
@@ -81,7 +81,7 @@
                                         @endphp
 
                                         @if ($contAula < $maximoPeriodos)
-                                            <option value="{{ $aula->id }}">{{ $aula->aula }}</option>
+                                            <option value="{{ $aula->id }}" class="text text-capitalize">{{ $aula->aula }}</option>
                                         @endif
                                     @endforeach
                                     </select><br>
@@ -95,14 +95,14 @@
                                     <label class="text text-capitalize">periodo </label>
                                 </div>
                                 <div class="col-8 col-md-9">
-                                    <select type="text" name="periodo_id" id="periodo_id" class="form-control">
+                                    <select type="text" name="periodo_id" id="periodo_id" class="form-control text text-capitalize"">
                                     @foreach ($periodos as $periodo)
                                         @php
                                             $bandPeriodo = $asignarpromas->where('aula_id', 1)->where('periodo_id', $periodo->id)->isEmpty();
                                         @endphp
 
                                         @if ($bandPeriodo)
-                                            <option value="{{ $periodo->id }}">{{ $periodo->periodo }}</option>
+                                            <option value="{{ $periodo->id }}" class="text text-capitalize">{{ $periodo->periodo }}</option>
                                         @endif
                                     @endforeach
                                     </select><br>
@@ -113,10 +113,10 @@
                         <div class="col-12 col-sm-12 col-md-6">
                             <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                 <div class="col-4 col-md-3">
-                                    <label class="text-black text-capitalize">fecha de asignacion</label>
+                                    <label class="text-black text-capitalize">fecha de asignación</label>
                                 </div>
                                   <div class="col-8 col-md-9">
-                                    <input class="form-control" placeholder="fechadeasignacion" type="date" name="fechadeasignacion"  value="<?php echo $fcha; ?>"  >
+                                    <input class="form-control" placeholder="fechadeasignacion" type="date" name="fechadeasignacion"  value="<?php echo $fcha; ?>" readonly >
                                   </div>
                             </div>
                           </div>
@@ -133,7 +133,7 @@
                         </div>
                         
                 </div>
-                <center><input type="submit" value="guardar datos" class="btn btn-primary"></center>
+                <center><input type="submit" value="Guardar Datos" class="btn btn-primary"></center>
                 @if(Session::has('registro_duplicado'))
                     <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
                                     {{ Session::get('registro_duplicado') }}

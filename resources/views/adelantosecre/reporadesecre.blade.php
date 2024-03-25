@@ -32,10 +32,10 @@
                                             </div>
                                             
                                                 <div class="col text-right">
-                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                                     <a href="{{url('opciones-reportesecre')}}" class="btn btn-sm btn-success" >
                                                         <i class="fas fa-plus-circle"></i>
-                                                        regresar</a>
+                                                        Regresar</a>
                                               </div>  
                                         </div>
                                         <div class="row">
@@ -86,7 +86,7 @@
                                     <th>Fecha de Adelanto</th>
                                     <th>Monto</th>
                                     <th>Estado</th>
-                                    <th>Observacion</th>
+                                    <th>Observación</th>
                                     <th>Secretaria</th>
                                     {{-- <th>acciones</th> --}}
                                 </tr>

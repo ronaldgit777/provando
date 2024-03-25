@@ -47,10 +47,10 @@
                                                       </div>
                                                     </div>
                                                 <div class="col text-right">
-                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                                     <a href="{{url('reporopciones')}}" class="btn btn-sm btn-success" >
                                                         <i class="fas fa-plus-circle"></i>
-                                                        regresar</a>
+                                                        Regresar</a>
                                               </div>  
                                         </div>
                                         <div class="row">
@@ -62,14 +62,14 @@
                                                   </div>
                                               </div>
                                               <div class="col">
-                                                <label class="text-primary text-capitalize">totaldescuento</label>
+                                                <label class="text-primary text-capitalize">total descuento</label>
                                                 <div class="input-group">
                                                       <input type="numeber" name="todesmin" id="todesmin" class="form-control" placeholder="desde">
                                                       <input type="numeber" name="todesmax" id="todesmax" class="form-control"  placeholder="hasta">
                                                 </div>
                                               </div>
                                               <div class="col">
-                                                <label class="text-primary text-capitalize">totalpago</label>
+                                                <label class="text-primary text-capitalize">total pago</label>
                                                 <div class="input-group">
                                                       <input type="numeber" name="topamin" id="topamin" class="form-control" placeholder="desde">
                                                       <input type="numeber" name="topamax" id="topamax" class="form-control"  placeholder="hasta">

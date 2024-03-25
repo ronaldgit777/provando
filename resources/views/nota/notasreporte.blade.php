@@ -588,8 +588,8 @@ function obtenerDatosTabla() {
                                           <thead class="thead-light">
                                       <tr>
                                           {{-- <th>#</th> --}}
-                                          <th>fechadenota</th>
-                                          <th>actividad_id</th>
+                                          <th>fecha de nota</th>
+                                          <th>actividad</th>
                                           <th>nota</th>
                                           {{-- <th>estado</th> --}}
                                       </tr>

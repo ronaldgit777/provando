@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+
 
 class RegisterController extends Controller
 {
@@ -71,8 +73,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
+     
     protected function create(array $data)
     {
+
+        
      /*  $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -85,12 +91,48 @@ class RegisterController extends Controller
     }
     protected function registrarEmpleado(Request $request)
     {
-      /*  $validator = Validator::make($request->all(), [
-            'nombre' => 'required',
-            'apellido' => 'required',
-            // Agrega aquí más reglas de validación según tus necesidades
-        ]);*/
+                  /* $validator = Validator::make($request->all(), [
+                        'email' => ['required', 'email', 'unique:users,email'],
+                        'nombre' => ['required', 'string', 'min:3'],
+                        'celular' => ['required', 'numeric', 'between:1,8'],
+                        // Otras reglas de validación
+                    ], [
+                        'email.required' => 'El campo email es requerido.',
+                        'email.email' => 'El email debe tener un formato válido.',
+                        'email.unique' => 'Este correo electrónico ya está en uso.',
+                        'nombre.required' => 'El campo nombre es requerido.',
+                        'nombre.string' => 'El nombre debe ser una cadena de texto.',
+                        'nombre.min' => 'El nombre debe tener al menos 3 caracteres.',
+                        'celular.required' => 'El campo celular es requerido.',
+                        'celular.numeric' => 'El celular debe ser un número.',
+                        'celular.between' => 'El celular debe tener entre 1 y 8 dígitos.'
+                    ]);*/
       
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => ['required', 'string', 'min:5'], 
+            'password_confirmation' => ['required', 'string', 'min:5', 'same:password'], // Añadido 'same:password'
+            'nombre' => ['required', 'string', 'min:3'],
+            'apellidopaterno' => ['required', 'string', 'min:5'],
+            'apellidomaterno' => ['required', 'string', 'min:5'],
+        ], [
+            'email.unique' => 'Este correo electrónico ya está en uso.',
+            'password.min' => 'La contraseña debe tener mínimo 5 caracteres.',
+            'password_confirmation.min' => 'La contraseña de confirmación debe tener mínimo 5 caracteres.',
+            'password_confirmation.same' => 'La contraseña de confirmación no coincide con la contraseña.',
+            'nombre.min' => 'El nombre debe tener al menos 3 caracteres.',
+            'apellidopaterno.min' => 'El apellido paterno debe tener al menos 5 caracteres.',
+            'apellidomaterno.min' => 'El apellido materno debe tener al menos 5 caracteres.'
+        ]);
+                    
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+    
+        //return redirect('ruta-a-redirigir');
+        
+        
         $user = User::create([
            // 'name' => $request->input('name'),
             'email' => $request->input('email'),

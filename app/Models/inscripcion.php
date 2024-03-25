@@ -87,8 +87,33 @@ class inscripcion extends Model
                 'materias.costo as materia_costo',
                 'periodos.periodo as periodo_nombre',
                 'aulas.aula as aula_nombre'
+            )
+         ->get();
+    }
+    public static function obtenerdatosde4tabla()
+    {   
+        return static
+        ::
+        //where('inscripcions.estado', 'activo')    y
+        //->
+        join('asignarpromas', 'inscripcions.asignarproma_id', '=', 'asignarpromas.id')
+            ->join('profesors', 'asignarpromas.profesor_id', '=', 'profesors.id')
+            ->join('alumnos', 'inscripcions.alumno_id', '=', 'alumnos.id')
+            ->join('materias', 'asignarpromas.materia_id', '=', 'materias.id')
+            ->join('periodos', 'asignarpromas.periodo_id', '=', 'periodos.id')
+            ->join('aulas', 'asignarpromas.aula_id', '=', 'aulas.id')
+            ->select(
+                'inscripcions.*','fechadeinscripcion',
+                'profesors.nombre as profesor_nombre','profesors.apellidopaterno as profesor_apellidopaterno','profesors.apellidomaterno as profesor_apellidomaterno',
+                'alumnos.nombre as alumno_nombre',
+                'alumnos.apellidopaterno as alumno_apellidopaterno',
+                'alumnos.apellidomaterno as alumno_apellidomaterno',
+                'materias.materia as materia_nombre',
+                'materias.costo as materia_costo',
+                'periodos.periodo as periodo_nombre',
+                'aulas.aula as aula_nombre'
             );
-           // ->get();
+        // ->get(); //para poder pagianr tiene q ser sin el get
     }
     public static function obtenerfecchainicioinscripcionreportesecre($fechaini,$fechafin,$profesorid2,$materiaid2,$periodoid2,$aulaid2,$alumnoid2,$ordenarins2,$mayorymenorins2,$alumnoidpa2,$alumnoidma2,$estadosecre2)
     {      

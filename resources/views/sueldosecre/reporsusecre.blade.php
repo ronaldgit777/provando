@@ -40,10 +40,10 @@
                                                       <div class="input-group">
                                                           <select type="text" name="ordenar" id="ordenar" class="form-control">
                                                             <option value="fechadesueldo">fecha</option> 
-                                                            <option value="mesdepago">mesdepago</option> 
+                                                            <option value="mesdepago">mes de pago</option> 
                                                             <option value="sueldo">sueldo</option> 
-                                                            <option value="totaldescuento">totaldescuento</option> 
-                                                            <option value="totalpago">totalpago</option> 
+                                                            <option value="totaldescuento">total descuento</option> 
+                                                            <option value="totalpago">total pago</option> 
                                                             <option value="nombre_secretaria">secretaria</option> 
                                                           </select>
                                                           <div class="input-group-append">
@@ -55,10 +55,10 @@
                                                       </div>
                                                     </div>
                                                 <div class="col text-right">
-                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                                     <a href="{{url('opciones-reportesecre')}}" class="btn btn-sm btn-success" >
                                                         <i class="fas fa-plus-circle"></i>
-                                                        regresar</a>
+                                                        Regresar</a>
                                               </div>  
                                         </div>
                                         <div class="row">
@@ -70,14 +70,14 @@
                                                   </div>
                                               </div>
                                               <div class="col">
-                                                <label class="text-primary text-capitalize">totaldescuento</label>
+                                                <label class="text-primary text-capitalize">total descuento</label>
                                                 <div class="input-group">
                                                       <input type="numeber" name="todesmin" id="todesmin" class="form-control" placeholder="desde">
                                                       <input type="numeber" name="todesmax" id="todesmax" class="form-control"  placeholder="hasta">
                                                 </div>
                                               </div>
                                               <div class="col">
-                                                <label class="text-primary text-capitalize">totalpago</label>
+                                                <label class="text-primary text-capitalize">total pago</label>
                                                 <div class="input-group">
                                                       <input type="numeber" name="topamin" id="topamin" class="form-control" placeholder="desde">
                                                       <input type="numeber" name="topamax" id="topamax" class="form-control"  placeholder="hasta">
@@ -94,10 +94,10 @@
                                 <tr>
                                     {{-- <th>#</th> --}}
                                     <th scope="col"> fecha de pago</th>
-                            <th scope="col"> mesdepago</th>
+                            <th scope="col"> mes de pago</th>
                             <th scope="col">sueldo</th>
-                            <th scope="col">totaldescuento</th>
-                            <th scope="col">totalpago</th>
+                            <th scope="col">total descuento</th>
+                            <th scope="col">total pago</th>
                             <th scope="col">observación</th>
                             <th scope="col">profesor</th>
                             {{-- <th scope="col">acciones</th> --}}

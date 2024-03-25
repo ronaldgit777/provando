@@ -10,9 +10,9 @@
                         <h3 class="mb-0">REGISTRAR NUEVO ADELANTO DEL PROFESOR</h3>
                     </div>
                     <div class="col text-right">
-                        <a href="{{url('adelantopro/')}}" class="btn btn-sm btn-success">
+                        <a href="{{url('adelantopro/')}}" class="btn btn-sm btn-success  text text-capitalize">
                             <i class="fas fa-undo"></i>
-                            regresar</a>
+                            Regresar</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                                             <label class="text-black text-capitalize">fecha de adelanto</label>
                                         </div>
                                           <div class="col-8 col-md-9">
-                                            <input class="form-control" placeholder="fechaadelantopro" type="date" name="fechaadelantopro"  value="<?php echo $fcha; ?>" id="fechaadelantopro" >
+                                            <input class="form-control" placeholder="fechaadelantopro" readonly type="date" name="fechaadelantopro"  value="<?php echo $fcha; ?>" id="fechaadelantopro" >
                                           </div>
                                     </div>
                                   </div>
@@ -40,10 +40,10 @@
                                           <label class="text text-capitalize" >profesor</label>
                                         </div>
                                         <div class="col-8 col-md-9">
-                                            <select type="text" name="profesor_id" id="profesor_id" class="form-control" required>
-                                              <option selected disabled value="">seleccione al profesor</option>
+                                            <select type="text" name="profesor_id" id="profesor_id" class="form-control" required class="text text-capitalize" >
+                                              <option selected disabled value="" class="text text-capitalize" >Seleccione al Profesor</option>
                                               @foreach ($profesors as $profesor)
-                                              <option value="{{ $profesor->id }}">{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
+                                              <option value="{{ $profesor->id }}" class="text text-capitalize" >{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
                                               @endforeach
                                           </select>
                                         </div>
@@ -138,14 +138,14 @@
                                           <label class="text text-capitalize">observación</label>
                                         </div>
                                           <div class="col-8 col-md-9">
-                                            <input class="form-control" placeholder="observacion" type="observacion" name="observacion" required autocomplete="observacion" id="observacion" > 
+                                            <input class="form-control" placeholder="ingrese una observación" type="observacion" name="observacion" required autocomplete="observacion" id="observacion" > 
                                           </div>
                                     </div>
                                   </div>
                                     <div class="col-12 col-sm-12 col-md-6">
                                         <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                             <div class="col-12 col-md-12 " >
-                                            <center><input type="submit" value="guardar datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonadelanto" disabled></center>
+                                            <center><input type="submit" value="guardar datos" class="btn btn-primary text text-capitalize" " onclick="generarpdfadelanto()"  id="botonadelanto" disabled></center>
                                             </div>
                                         </div>
                                     </div>

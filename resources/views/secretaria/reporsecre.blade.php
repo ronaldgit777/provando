@@ -34,10 +34,10 @@
                                 <input type="text" name="apellidomaterno" id="apellidomaterno" class="form-control">
                               </div>
                                 <div class="col text-right">
-                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                   <a href="{{url('opciones-reportesecre')}}" class="btn btn-sm btn-success text-capitalize" >
                                       <i class="fas fa-plus-circle"></i>
-                                      regresar</a>
+                                      Regresar</a>
                                 </div>  
                       </div>
                       <div class="row">
@@ -119,7 +119,7 @@
                 <th scope="col" data-column="apellidopaterno" class="sortable">Apellido Paterno</th>
                 <th scope="col" data-column="apellidomaterno" class="sortable">Apellid Materno</th>
                 <th scope="col" data-column="celular" class="sortable">Celular</th>
-                <th scope="col" data-column="direccion" class="sortable">Direccion</th>
+                <th scope="col" data-column="direccion" class="sortable">Dirección</th>
                 <th scope="col" data-column="correo" class="sortable">Correo</th>
                 <th scope="col" data-column="estado" class="sortable">Estado</th>
                 <th scope="col">Imagen</th>

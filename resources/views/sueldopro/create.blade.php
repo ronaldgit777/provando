@@ -12,7 +12,7 @@
                 <div class="col text-right">
                     <a href="{{url('sueldopro/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                                         </div>
                                     <div class="col-8 col-md-9">
                                         <select type="text" name="profesor_id" id="profesor_id" class="form-control" required>
-                                            <option selected disabled value="">seleccione al profesor</option>
+                                            <option selected disabled value="" >Seleccione al Profesor</option>
                                             @foreach ($profesors as $profesor)
-                                            <option value="{{ $profesor->id }}">{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
+                                            <option value="{{ $profesor->id }}" class="text text-capitalize">{{ $profesor->nombre." ".$profesor->apellidopaterno." ".$profesor->apellidomaterno}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -45,7 +45,7 @@
                                          <label class="text text-capitalize">fecha de pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="date" name="fechadesueldo" id="fechadesueldo" class="form-control" value="<?php echo $fcha; ?>" > <br>
+                                        <input type="date" name="fechadesueldo" id="fechadesueldo" class="form-control" value="<?php echo $fcha; ?>" Readonly> <br>
                                     </div>
                                 </div>
                             </div>
@@ -55,19 +55,19 @@
                                         <label class="text text-capitalize" >mes de pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                         <select type="text" name="mesdepago" id="mesdepago" class="form-control">
-                                            <option value="enero">enero</option>
-                                            <option value="febrero">febrero</option>
-                                            <option value="marzo">marzo</option>
-                                            <option value="abril">abril</option>
-                                            <option value="mayo">mayo</option>
-                                            <option value="junio">junio</option>
-                                            <option value="julio">julio</option>
-                                            <option value="agosto">agosto</option>
-                                            <option value="septiembre">septiembre</option>
-                                            <option value="octubre">octubre</option>
-                                            <option value="noviembre">noviembre</option>
-                                            <option value="diciembre">diciembre</option>
+                                         <select type="text" name="mesdepago" id="mesdepago" class="form-control" class="text text-capitalize">
+                                            <option value="enero" class="text text-capitalize">Enero</option>
+                                            <option value="febrero" class="text text-capitalize">febrero</option>
+                                            <option value="marzo" class="text text-capitalize">marzo</option>
+                                            <option value="abril" class="text text-capitalize">abril</option>
+                                            <option value="mayo" class="text text-capitalize">mayo</option>
+                                            <option value="junio" class="text text-capitalize">junio</option>
+                                            <option value="julio" class="text text-capitalize">julio</option>
+                                            <option value="agosto" class="text text-capitalize">agosto</option>
+                                            <option value="septiembre" class="text text-capitalize">septiembre</option>
+                                            <option value="octubre" class="text text-capitalize">octubre</option>
+                                            <option value="noviembre" class="text text-capitalize">noviembre</option>
+                                            <option value="diciembre" class="text text-capitalize">diciembre</option>
                                         </select><br>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                         <label class="text text-capitalize">sueldo</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text"  id="sueldo" class="form-control"  value=""  readonly> 
+                                        <input type="text"  id="sueldo" class="form-control"  value="" placeholder="Sueldo" readonly> 
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                         <label class="text text-capitalize">total descuento</label>
                                     </div>
                                     <div class="col-8 col-md-6">
-                                        <input type="text" name="totaldescuento" id="totaldescuento" class="form-control" readonly> <br>
+                                        <input type="text" name="totaldescuento" id="totaldescuento" class="form-control" value="" placeholder="Total Descuento" readonly>  <br>
                                     </div>
                                     <div class="col-8 col-md-3">
                              <a href="" class="btn btn-success disabled" data-toggle="modal" data-target="#myModal2" onclick="veradelantos()" id="bo" > 
@@ -140,7 +140,7 @@
                                         <label class="text text-capitalize">total pago</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text" name="totalpago" id="totalpago" class="form-control" readonly> <br>
+                                        <input type="text" name="totalpago" id="totalpago" class="form-control" value="" placeholder="Total Pago" readonly> <br>
                                     </div>
                                 </div>
                             </div>
@@ -150,14 +150,14 @@
                                         <label class="text text-capitalize">observación</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text" name="observacion" id="observacion" class="form-control" required> <br>
+                                        <input type="text" name="observacion" id="observacion" class="form-control" placeholder="Ingrese una observación" required > <br>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-6">
                                 <div class="form-group m-form__group row" style="display: flex; margin-left: 2px">
                                     <div class="col-12 col-md-12 " >
-                                    <center><input type="submit" value="guardar datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonguardar" disabled></center>
+                                    <center><input type="submit" value="Guardar Datos" class="btn btn-primary" onclick="generarpdfadelanto()"  id="botonguardar" disabled></center>
                                     </div>
                                 </div>
                             </div>

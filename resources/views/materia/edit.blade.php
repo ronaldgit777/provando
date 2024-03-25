@@ -11,7 +11,7 @@
                 <div class="col text-right">
                     <a href="{{url('materia/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                                   
 
                                     <div class="col-6 col-md-6 ">
-                                            <input type="submit" value="guardar datos" class="btn btn-primary">
+                                            <input type="submit" value="Guardar Datos" class="btn btn-primary">
                                      </div>
                                         
                                 </div>

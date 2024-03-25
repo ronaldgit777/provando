@@ -38,10 +38,10 @@
                                   {{-- <input type="text" name="aula_id" id="aula_id" class="form-control" > --}}
                                   </div>
                                 <div class="col text-right">
-                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                   <a href="{{url('home')}}" class="btn btn-sm btn-success" >
                                   <i class="fas fa-plus-circle"></i>
-                                  regresar</a>
+                                  Regresar</a>
                               </div>  
                         </div>
                         <div class="row">

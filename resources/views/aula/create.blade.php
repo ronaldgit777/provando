@@ -11,7 +11,7 @@
                 <div class="col text-right">
                     <a href="{{url('aula/')}}" class="btn btn-sm btn-success">
                         <i class="fas fa-undo"></i>
-                        regresar</a>
+                        Regresar</a>
                 </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                                          <label class="text text-capitalize">aula</label>
                                     </div>
                                     <div class="col-8 col-md-9">
-                                        <input type="text" name="aula" id="aula" class="form-control" required> <br>
+                                        <input type="text" name="aula" id="aula" class="form-control" placeholder="ingrese una aula" required> <br>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="col-12 col-sm-12 col-md-12">
                                     <div class="form-group m-form__group row " style="display: flex; margin-left: 2px"> 
                                         <div class="col-6 col-md-6 ">
-                                                <input type="submit" value="guardar datos" class="btn btn-primary">
+                                                <input type="submit" value="Guardar Datos" class="btn btn-primary">
                                         </div>                                       
                                     </div>
                             </div> 

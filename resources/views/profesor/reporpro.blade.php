@@ -34,10 +34,10 @@
                                 <input type="text" name="apellidomaterno" id="apellidomaterno" class="form-control">
                               </div>
                                 <div class="col text-right">
-                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>imprimir</button>
+                                  <button class="btn btn-danger btn-sm" type="button" onclick="generarpdflistaprofesor()"><i class="fas fa-print"></i>Imprimir</button>
                                   <a href="{{url('reporopciones')}}" class="btn btn-sm btn-success" >
                                   <i class="fas fa-plus-circle"></i>
-                                  regresar</a>
+                                  Regresar</a>
                               </div>  
                       </div>
                       <div class="row">
@@ -119,7 +119,7 @@
           <th scope="col" data-column="apellidopaterno" class="sortable">apellido paterno</th>
           <th scope="col" data-column="apellidomaterno" class="sortable">apellido materno</th>
           <th scope="col" data-column="celular" class="sortable">celular</th>
-          <th scope="col" data-column="direccion" class="sortable">direccion</th>
+          <th scope="col" data-column="direccion" class="sortable">dirección</th>
           <th scope="col" data-column="correo" class="sortable">correo</th>
           <th scope="col" data-column="estado" class="sortable">estado</th>
           <th scope="col">imagen</th>
